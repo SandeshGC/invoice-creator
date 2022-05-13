@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+#container {
+    width: 50%;
+    height: 800px;
+    margin: 50px auto;
+    min-width: 350px;
+    background-color: #FFFFFF;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 55px;
+}
+
+#body-header {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding: 50px;
+    font-size: 16px;
+}
+
+#service-btn-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+
+.service-btn {
+    /*choose service button*/
+
+    border: solid 1px #D5D4D8;
+    width: 150px;
+    min-width: 100px;
+    height: 50px;
+    border-radius: 7px;
+    background-color: #FFF;
+    color: #4A4E74;
+    font-size: 15px;
+    font-weight: 600;
+    transition-duration: 250ms;
+    margin: 10px 5px;
+}
+
+.service-btn:hover {
+    border: 2px solid #4A4E74;
+    transition: border 100ms ease-in-out;
+}
+
+#invoice-main {
+    /*invoice-container*/
+    margin: 40px;
+}
+
+#invoice-footer {
+    /*invoice footer and body both are selected*/
+    display: flex;
+    justify-content: space-between;
+}
+
+#invoice-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-grey-ucase-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #918E9B;
+    line-height: 25px;
+}
+
+#total-amt {
+    /*for the number representing total amount*/
+    text-align: right;
+    color: #4A4E74;
+    font-size: 35px;
+    FONT-WEIGHT: 600;
+}
+
+#send-invoice-btn {
+    background-color: #3770ED;
+    color: white;
+    padding: 10px 100px;
+    border-radius: 7px;
+    border: 1px solid #3770ED;
+    min-width: 350px;
+    min-height: 50px;
+    font-size: 18px;
+    margin: 15px auto;
+}
+
+#note-text {
+    /*for the text under 'NOTES'*/
+    font-size: 15px;
+    color: #4A4E74;
+    font-weight: 400;
+}
+
+#total { /* div that contains "TOTAL AMOUNT" text and Total amount.*/
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin: 15px 0px;
+    list-style-type: none;
+    font-weight: 600;
+}
+
+hr {
+    margin: 25px auto;
+}
+
+#body-footer {
+    /*contains only the 'send invoice' button*/
+    display: flex;
+    justify-content: center;
+}
+.dollar-sign{
+color: #918E9B;
+}
