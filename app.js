@@ -120,6 +120,6 @@ function clearInvoice() {
     taskList.innerHTML = chosenServiceArr
     costList.innerHTML = "";
     totalAmount.textContent = "$0"
-
+    window.alert("The invoice has been sent successfully!");
     //later use localStorage.clear()
 }
