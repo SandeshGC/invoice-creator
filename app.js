@@ -12,30 +12,6 @@ const serviceCost = [
     30
     // 40
 ]
-// const services = [
-//     {name: "Wash Car", cost: 10},
-//     {name: "Mow Lawn", cost: 20},
-//     {name: "Pull Weeds", cost: 30},
-/*  localStorage.setItem("chosenServices", services[0].name + services[0].cost)
- */
-// ]
-// switch (chosenService){
-// case serviceName[0]:
-//         cost = serviceCost[0]
-//         break;
-//     case serviceName[1]:
-//         cost= serviceCost[1];
-// }
-
-/*
-    for (let i = 0; i < serviceName.length; i++){
-    if (chosenService==serviceName[i]){
-        cost = serviceCost[i]
-    }
-}
-
-*/
-
 let chosenServiceArr = JSON.parse(localStorage.getItem("chosenServices"))
 // console.log(chosenServiceArr)
 const taskList = document.querySelector("#task-list");
@@ -46,19 +22,15 @@ const sendInvoiceBtn = document.querySelector("#send-invoice-btn")
 
 renderServiceBtn(serviceName); //renders the service buttons using existing services in the 'serviceArr' array to the 'serviceBtnContainer'
 if (chosenServiceArr == null) {
-    chosenServiceArr = []; //setting empty array if it is null because properties of null cannot be read "eg. null.includes()"
+    chosenServiceArr = []; //setting empty array if it is null because properties of null cannot be read "eg. null.includes(), null.length"
 }
 renderTasks(chosenServiceArr)
 renderCosts(chosenServiceArr)
 function getService(serviceEl) { //receives the service which is clicked
     let chosenService = serviceEl.textContent;
-    // console.log(chosenService)
-    //adding the service if it has not been added already
-    // if (chosenServiceArr == null) {
-    //     chosenServiceArr = []; //setting empty array if it is null because properties of null cannot be read "eg. null.includes()"
-    // }
     if (chosenServiceArr.includes(chosenService)) {
-        console.log("Element already exists!")
+//         console.log("Element already exists!")
+        window.alert("You have already selected this service!");
         return;
     } else {
         chosenServiceArr.push(chosenService) //adding to chosen services array
@@ -85,10 +57,7 @@ function renderCosts(arr) {
 }
 
 function renderTasks(arr) {
-    let tempDOM = ''; //temporarily accumulates the DOM content to be rendered as list items    
-    // if (arr == null) {
-    //     arr = []; //setting empty array if it is null because properties of null cannot be read "eg. null.includes()"
-    // }
+    let tempDOM = ''; //temporarily accumulates the DOM content to be rendered as list items
     for (let i = 0; i < arr.length; i++) {
         tempDOM += `<li>${arr[i]}</li>`
     }
@@ -106,21 +75,16 @@ function renderServiceBtn(arr) { //renders an array of services as button at the
 
 
 //function to send invoice and clear
-sendInvoiceBtn.addEventListener("click", function () {
-    console.log("Invoice has been sent!")
-    clearInvoice();
-
-})
+sendInvoiceBtn.addEventListener("click", clearInvoice)
 
 function clearInvoice() {
 
     chosenServiceArr = [];
     localStorage.removeItem("chosenServices");
     // localStorage.removeItem("serviceCosts")
-
+    //later use localStorage.clear()
     taskList.innerHTML = chosenServiceArr
     costList.innerHTML = "";
     totalAmount.textContent = "$0"
     window.alert("The invoice has been sent successfully!");
-    //later use localStorage.clear()
 }
