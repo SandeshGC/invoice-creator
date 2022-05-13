@@ -1,10 +1,11 @@
-//change the services in the 'services' array
+//add/remove the services in the 'services' array
 const serviceName = [
     "Wash Car",
     "Mow Lawn",
     "Pull Weeds"
     // "Clean House"
 ];
+//add/remove the respective costs of services in the 'serviceCost' array
 const serviceCost = [
     10,
     20,
