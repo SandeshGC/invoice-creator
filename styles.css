@@ -13,7 +13,8 @@ body {
 
 #container {
     width: 50%;
-    height: 800px;
+    min-height: 800px;
+    max-height: auto;
     margin: 50px auto;
     min-width: 350px;
     background-color: #FFFFFF;
